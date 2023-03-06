@@ -101,7 +101,3 @@ function makeNiTable(Ni) {
     tabla.appendChild(fila);
   });
 }
-
-function imprimir_Alguito(){
-  console.log("Hola coso");
-}
