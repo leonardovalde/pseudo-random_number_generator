@@ -101,3 +101,5 @@ function makeNiTable(Ni) {
     tabla.appendChild(fila);
   });
 }
+
+console.log("Coso");
