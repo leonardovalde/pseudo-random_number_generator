@@ -1,1 +1,1 @@
-# pseudo-random_number_generator
+# Pseudo-random Number Generator
