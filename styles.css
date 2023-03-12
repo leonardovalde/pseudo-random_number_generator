@@ -115,3 +115,30 @@ button {
 button:hover {
   background-color: #3e8e41;
 }
+
+
+#CLtables{
+  display: flex;
+}
+
+#inputsTable{
+  width: 90%;
+  margin-left: 5%;
+  margin-right: -50%;
+}
+
+#rangeOutputs{
+  width: 10%;
+  margin-left: 50%;
+  margin-right: 30%;
+}
+
+#OutputTable{
+  margin-top: 20px;
+}
+
+#OutputTable{
+  margin-left: 200px;
+
+  margin-right: 200px;
+}

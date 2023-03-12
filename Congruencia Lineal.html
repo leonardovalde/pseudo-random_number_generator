@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+
 <head>
     <title>Congruencia Lineal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
         <ul>
@@ -11,5 +13,80 @@
             <li><a href="Congruencia Multiplicativa.html">Congruencia Multiplicativa</a></li>
         </ul>
     </header>
+    <div id="CLtables">
+        <div id="inputsTable">
+            <table>
+                <tr>
+                    <th>ENTRADAS</th>
+                    <th>VALOR</th>
+                    <th>PARAMETRO</th>
+                    <th>VALOR</th>
+                </tr>
+                <tr>
+                    <td>X<sub>0</sub></td>
+                    <td><input type="number" id="inputX0"></td>
+                    <td>X<sub>0</sub></td>
+                    <td id="outputX0"></td>
+                </tr>
+                <tr>
+                    <td>k</td>
+                    <td><input type="number" id="inputk"></td>
+                    <td>a = 1 + 2k</td>
+                    <td id="outputk"></td>
+                </tr>
+                <tr>
+                    <td>c</td>
+                    <td><input type="number" id="inputc"></td>
+                    <td>c</td>
+                    <td id="outputc"></td>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td><input type="number" id="inputm"></td>
+                    <td>m = 2<sup>g</sup></td>
+                    <td id="outputm"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button id="calculateButton">Calcular</button></td>
+                </tr>
+            </table>
+        </div>
+        <div id="rangeOutputs">
+            <table>
+                <tr>
+                    <th>PARAMETRO</th>
+                    <th>VALOR</th>
+                </tr>
+                <tr>
+                    <th>Iteraciones</th>
+                    <td><input type="number" id="iteraciones"></td>
+                </tr>
+                <tr>
+                    <th>Valor Minimo</th>
+                    <td><input type="number" id="min-value"></td>
+                </tr>
+                <tr>
+                    <th>Valor Maximo</th>
+                    <td><input type="number" id="max-value"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="OutputTable">
+        <table id="tablaTwo">
+            <thead>
+                <tr>
+                    <th>i</th>
+                    <th>X<sub>i</sub></th>
+                    <th>R<sub>i</sub></th>
+                    <th>N<sub>i</sub></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+    </div>
+    <script src="LinealScript.js"></script>
 </body>
+
 </html>

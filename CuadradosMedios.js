@@ -30,9 +30,6 @@ function runMethod() {
 function calculateNi(Ri, min, max) {
   let Ni = [];
   Ri.forEach((element) => {
-    console.log(typeof min);
-    console.log(typeof max);
-    console.log(typeof element);
     Ni.push(min + (max - min) * element);
   });
   return Ni;
