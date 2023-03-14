@@ -11,9 +11,83 @@
             <li><a href="CongruenciaMultiplicativa.html">Congruencia Multiplicativa</a></li>
         </ul>
     </header>
-    <div>
-        
+    <div id="CLtables">
+        <div id="inputsTable">
+            <table>
+                <tr>
+                    <th>ENTRADAS</th>
+                    <th>VALOR</th>
+                    <th>PARAMETRO</th>
+                    <th>VALOR</th>
+                </tr>
+                <tr>
+                    <td>X<sub>0</sub></td>
+                    <td><input type="number" id="inputX0"></td>
+                    <td>X<sub>0</sub></td>
+                    <td id="outputX0"></td>
+                </tr>
+                <tr>
+                    <td>t</td>
+                    <td><input type="number" id="inputT"></td>
+                    <td>a = 8t + 3 </td>
+                    <td id="outputT"></td>
+                </tr>
+                <tr>
+                    <td>g</td>
+                    <td><input type="number" id="inputG"></td>
+                    <td>m = 2<sup>g</sup></td>
+                    <td id="outputG"></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><button id="calculateButton">Calcular</button></td>
+                </tr>
+            </table>
+        </div>
+        <div id="rangeOutputs">
+            <table>
+                <tr>
+                    <th>PARAMETRO</th>
+                    <th>VALOR</th>
+                </tr>
+                <tr>
+                    <th>Iteraciones</th>
+                    <td><input type="number" id="iteraciones"></td>
+                </tr>
+                <tr>
+                    <th>Valor Minimo</th>
+                    <td><input type="number" id="min-value"></td>
+                </tr>
+                <tr>
+                    <th>Valor Maximo</th>
+                    <td><input type="number" id="max-value"></td>
+                </tr>
+            </table>
+        </div>
     </div>
+    <div id="OutputTable">
+        <table id="tablaTwo">
+            <thead>
+                <tr>
+                    <td colspan="2">
+                        <button id="ExportRi">Exportar Ri</button>
+                    </td>
+                    <td colspan="2">
+                        <button id="ExportNi">Exportar Ni</button>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <th>i</th>
+                    <th>X<sub>i</sub></th>
+                    <th>R<sub>i</sub></th>
+                    <th>N<sub>i</sub></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+    </div>
+    <script src="Multiplicativa.js"></script>
 
     
     
