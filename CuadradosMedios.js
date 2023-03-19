@@ -1,10 +1,13 @@
 let miBoton = document.getElementById("miBoton");
 miBoton.addEventListener("click", runMethod);
 
+let Ri = [];
+let Ni = [];
+
 function runMethod() {
   let tablas = document.getElementById("tablas");
   tablas.innerHTML =
-    '<table id="tablaOne"> <thead> <tr> <th>i</th> <th>Xi</th> <th>Xi^2</th> <th>Extencion</th> <th>Extraccion</th> <th>Ri</th> </tr> </thead> <tbody> </tbody> </table>';
+    '<table id="tablaOne">  <thead> <tr> <th>i</th> <th>Xi</th> <th>Xi^2</th> <th>Extencion</th> <th>Extraccion</th> <th>Ri</th> </tr> </thead> <tbody> </tbody> </table>';
   let Xi = document.getElementById("seed").value;
   let iterations = document.getElementById("iterations").value;
   let minimo = +document.getElementById("min-value").value;
@@ -13,7 +16,7 @@ function runMethod() {
     .getElementById("tablaOne")
     .getElementsByTagName("tbody")[0];
   tabla.innerHTML = "";
-  let Ri = [];
+  Ri = [];
   let iterationsList = [];
   for (let i = 0; i < iterations; i++) {
     iterationsList.push(makeIteration(Xi));
@@ -22,13 +25,13 @@ function runMethod() {
     Xi = iterationsList[iterationsList.length - 1][3];
   }
   if (minimo != 0 && maximo != 0) {
-    let Ni = calculateNi(Ri, minimo, maximo);
+    Ni = calculateNi(Ri, minimo, maximo);
     makeNiTable(Ni);
   }
 }
 
 function calculateNi(Ri, min, max) {
-  let Ni = [];
+  Ni = [];
   Ri.forEach((element) => {
     Ni.push(min + (max - min) * element);
   });
@@ -99,4 +102,12 @@ function makeNiTable(Ni) {
   });
 }
 
-console.log("Coso");
+let exportRiButton = document.getElementById("ExportRi");
+exportRiButton.addEventListener("click", function(){
+  navigator.clipboard.writeText(Ri.toString());
+});
+
+let exportNiButton = document.getElementById("ExportNi");
+exportNiButton.addEventListener("click", function(){
+  navigator.clipboard.writeText(Ni.toString());
+})
