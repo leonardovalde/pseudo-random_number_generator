@@ -147,3 +147,19 @@ button:hover {
   align-items: center;
   
 }
+
+#graphicInput{
+  display: block;
+  width: 96%;
+}
+
+#IntervalosLabbel{
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+#graphicDiv{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2%;
+}
