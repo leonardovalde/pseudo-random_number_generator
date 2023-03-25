@@ -50,6 +50,12 @@ function makeIteration(Xi) {
       extaction = String(square).substring(1, 5);
       break;
     case 6:
+      extaction = String(square).substring(1, 5);
+      break;
+    case 5:
+      extaction = String(square).substring(0, 4);
+      break;
+    case 4:
       extaction = String(square).substring(0, 4);
       break;
   }
