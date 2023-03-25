@@ -3,6 +3,7 @@
 <head>
     <title>Congruencia Lineal</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
 </head>
 
 <body>
@@ -78,13 +79,14 @@
         <table id="tablaTwo">
             <thead>
                 <tr>
+                    <tr>
+                    </tr>
                     <td colspan="2">
-                        <button id="ExportRi">Exportar Ri</button>
+                        <button id="Graficar_Ri">Graficar Ri</button>
                     </td>
                     <td colspan="2">
-                        <button id="ExportNi">Exportar Ni</button>
+                        <button id="Graficar_Ni">Graficar Ni</button>
                     </td>
-                    
                 </tr>
                 <tr>
                     <th>i</th>
@@ -97,7 +99,16 @@
             </tbody>
           </table>
     </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="graphicDiv"></div>
+        </div>
+    </div>
+
     <script src="LinealScript.js"></script>
+    <script src="graphics.js"></script>
 </body>
 
 </html>

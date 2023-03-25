@@ -88,18 +88,31 @@ function loadTable(table){
     });
 }
 
-let exportRiButton = document.getElementById("ExportRi")
-exportRiButton.addEventListener("click", exportRi)
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
 
-function exportRi(){
-  navigator.clipboard.writeText(RiArray.toString());
-  alert("Copiado en el portapapeles Ri!!")
+let graficar_Ri = document.getElementById("Graficar_Ri");
+graficar_Ri.onclick = function() {
+  let ranges = Number.parseInt(document.getElementById("iteraciones").value);
+  makeIntervalsTable(ranges/5, RiArray);
+  modal.style.display = "block";
 }
 
-let exportNiButton = document.getElementById("ExportNi")
-exportNiButton.addEventListener("click", exportNi)
-
-function exportNi(){
-  navigator.clipboard.writeText(NiArray.toString());
-  alert("Copiado en el portapapeles Ni!!")
+let graficar_Ni = document.getElementById("Graficar_Ni");
+graficar_Ni.onclick = function() {
+  let ranges = Number.parseInt(document.getElementById("iteraciones").value);
+  makeIntervalsTable(ranges/5, NiArray);
+  modal.style.display = "block";
 }
+
+span.onclick = function() {
+  console.log("oe");
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
