@@ -10,6 +10,7 @@ calculateBtn.onclick = function () {
   riArray = [];
   niArray = [];
   uniformDistribution(Number.parseInt(iterations.value), Number.parseInt(max_value.value), Number.parseInt(min_value.value));
+  makeTable();
 };
 
 function uniformDistribution(numSamples, max, min) {
@@ -45,5 +46,26 @@ span.onclick = function() {
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+  }
+}
+
+function makeTable() {
+  let tabla = document.getElementById("tablas");
+  tabla.innerHTML = "";
+  tabla.innerHTML =
+    '<table id="tablaUno"><thead><tr><th>i</th><th>ri</th><th>ni</th></tr></thead><tbody></tbody></table>';
+  let tablaBody = document.getElementById("tablaUno");
+  for (let i = 0; i < riArray.length; i++) {
+    let fila = document.createElement("tr");
+    let iColumn = document.createElement("td");
+    iColumn.textContent = i+1;
+    fila.appendChild(iColumn);
+    let riColumn = document.createElement("td");
+    riColumn.textContent = riArray[i];
+    fila.appendChild(riColumn);
+    let niColumn = document.createElement("td");
+    niColumn.textContent = niArray[i];
+    fila.appendChild(niColumn);
+    tablaBody.appendChild(fila);
   }
 }
