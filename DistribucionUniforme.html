@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cuadrados Medios</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest/dist/Chart.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Cuadrados Medios</a></li>
+            <li><a href="CongruenciaLineal.html">Congruencia Lineal</a></li>
+            <li> <a href="CongruenciaMultiplicativa.html">Congruencia Multiplicativa</a>
+            <li> <a href="DistribucionUniforme.html">Distribucion Uniforme</a>
+            <li> <a href="DistribucionNormal.html">Distribucion Normal</a></li>
+        </ul>
+    </header>
+    <div id="CLtables">
+        <table>
+            <tr>
+                <th>ENTRADAS</th>
+                <th>VALOR</th>
+            </tr>
+            <tr>
+                <td>
+                    <label for="min-value">Maximo:</label>
+                </td>
+                <td>
+                    <input type="number" id="max-value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="max-value">Minimo:</label>
+                </td>
+                <td>
+                    <input type="number" id="min-value" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="max-value">Iteraciones:</label>
+                </td>
+                <td>
+                    <input type="number" id="iterations" name="max-value" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button id="miBoton">Calcular</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table>
+        <tr>
+            <td colspan="2"><button id="Graficar_Ri">Graficar Ri</button></td>
+            <td colspan="2"><button id="Graficar_Ni">Graficar Ni</button></td>
+        </tr>
+    </table>
+    <div id="tablas"></div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="graphicDiv"></div>
+        </div>
+    </div>
+    <script src="graphics.js"></script>
+    <script src="DistribucionUniforme.js"></script>
+</body>
+
+</html>
