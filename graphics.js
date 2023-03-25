@@ -1,17 +1,3 @@
-let graphicInput = document.getElementById("graphicInput");
-let graphicButton = document.getElementById("graphicButton");
-let IntervalosInput = document.getElementById("Intervalos");
-
-graphicButton.addEventListener("click", function(){
-    let data = (graphicInput.value).split(',');
-    let dataAux = [];
-    data.forEach(element => {
-        dataAux.push(parseFloat(element));
-    });
-    let intervals = IntervalosInput.value;
-    makeIntervalsTable(intervals, dataAux);
-});
-
 function makeIntervalsTable(intervals, data){
     let min = Math.min(...data);
     let max = Math.max(...data);
