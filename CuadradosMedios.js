@@ -102,12 +102,31 @@ function makeNiTable(Ni) {
   });
 }
 
-let exportRiButton = document.getElementById("ExportRi");
-exportRiButton.addEventListener("click", function(){
-  navigator.clipboard.writeText(Ri.toString());
-});
 
-let exportNiButton = document.getElementById("ExportNi");
-exportNiButton.addEventListener("click", function(){
-  navigator.clipboard.writeText(Ni.toString());
-})
+
+let modal = document.getElementById("myModal");
+let span = document.getElementsByClassName("close")[0];
+
+let graficar_Ri = document.getElementById("Graficar_Ri");
+graficar_Ri.onclick = function() {
+  let ranges = Number.parseInt(document.getElementById("iterations").value);
+  makeIntervalsTable(ranges/5, Ri);
+  modal.style.display = "block";
+}
+
+let graficar_Ni = document.getElementById("Graficar_Ni");
+graficar_Ni.onclick = function() {
+  let ranges = Number.parseInt(document.getElementById("iterations").value);
+  makeIntervalsTable(ranges/5, Ni);
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}

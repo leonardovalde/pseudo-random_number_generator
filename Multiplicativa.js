@@ -8,9 +8,11 @@ let gOutput = document.getElementById("outputG");
 let iInput = document.getElementById("iteraciones");
 let minInput = document.getElementById("min-value");
 let maxInput = document.getElementById("max-value");
-
 let calculateButton = document.getElementById("calculateButton");
 calculateButton.addEventListener("click", calculateMethod);
+
+let niOutput = [];
+let riOutput = [];
 
 xoInput.addEventListener("input", function(){
     let xoValue = xoInput.value;
@@ -35,10 +37,14 @@ function calculateMethod(){
     let g = parseInt(gOutput.innerHTML);
     let min = parseInt(minInput.value);
     let max = parseInt(maxInput.value);
+    riOutput = [];
+    niOutput = [];
     for(let i = 0; i < iteraciones; i++){
         xi = calculateXi(xi, t, g);
         let ri = calculateRi(xi, g);
         let ni = calculateNi(min, max, ri);
+        riOutput.push(ri);
+        niOutput.push(ni);
         table.push([i+1, xi, ri, ni]);
     }
     loadTable(table);
@@ -81,3 +87,15 @@ function loadTable(table){
         tableBody.appendChild(fila);
     });
 }
+
+let exportRi = document.getElementById("ExportRi");
+exportRi.addEventListener("click", function(){
+    navigator.clipboard.writeText(riOutput.toString());
+    alert("Copiado en el portapapeles Ri!!");
+});
+
+let ExportNi = document.getElementById("ExportNi");
+ExportNi.addEventListener("click", function(){
+    navigator.clipboard.writeText(niOutput.toString());
+    alert("Copiado en el portapapeles Ni!!");
+});
