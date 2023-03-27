@@ -1,40 +1,38 @@
+//Este metodo se encarga de crear la tabla de frecuencia, apartir de la lista de los datos y el numero de intervalos
 function makeIntervalsTable(intervals, data){
-    let min = Math.min(...data);
-    let max = Math.max(...data);
-    let diff = (max-min)/intervals;
-    data.sort(function(a, b) {
+    let min = Math.min(...data);//Halla el maximo de la lista de datos
+    let max = Math.max(...data);//Halla el minimo de la lista de datos
+    let diff = (max-min)/intervals;//Calcula la distancia entre cada intervalo
+    data.sort(function(a, b) {//Ordena la lista
         return a - b;
     });
-    let freccTable = []
-    freccTable.push(min+diff);
+    let freccTable = []//Crea el array para almacenar los indices de las frecuencias
+    freccTable.push(min+diff);//Coloca como primer elemento, el minimo + la diferencia
     
     for(let i = 1; i<intervals; i++){
-        freccTable.push((freccTable[i-1])+diff);
+        freccTable.push((freccTable[i-1])+diff);//Al indice anterior le suma la diferencia y lo guarda
     }
-    let dataIndex = 0;
-
-
-    let frecc = [];
+    let frecc = [];//Crea el array para almacenar la frecuencia
     for (let i = 0; i < intervals; i++) {
-        frecc.push(0);
+        frecc.push(0);//Llena el array de ceros, para poder sumar cada frecuencia
     }
 
+    let dataIndex = 0;//Este index se encarga de recorrer los datos
     for (let i = 0; i <= intervals; i++) {
-        while (data[dataIndex]<= freccTable[i]){
+        while (data[dataIndex]<= freccTable[i]){//Con cada uno de los intervalos se va verificanmdo si son menores para ir sumando, en caso de que no sea se pasa al siguiente
             frecc[i]++;
             dataIndex++;
         }
     }
 
-    let graphicDiv = document.getElementById("graphicDiv");
-    graphicDiv.innerHTML = '';
-    graphicDiv.innerHTML = ' <canvas id="grafica"></canvas>';
+    let graphicDiv = document.getElementById("graphicDiv");//Recupera el div de la grafica
+    graphicDiv.innerHTML = '';//Vacia la grafica en caso de que ya haya sido creada
+    graphicDiv.innerHTML = ' <canvas id="grafica"></canvas>';//Prepara el div para colocar la grafica
 
     makeGraph(freccTable, frecc);
-    //0.0948,0.8987,0.7661,0.6909,0.7342,0.9049,0.8844,0.2163,0.6785,0.0362,0.131,0.7161,0.2799,0.8344,0.6223,0.7257,0.664,0.0896,0.8028,0.4487,0.1331,0.7715,0.5212,0.1649,0.7192,0.7248,0.5335,0.4622,0.3628,0.1623,0.6341,0.2082
-
 }
 
+//Este metodo es el encargado de crear la grafica, recibiendo como parametros las etiquetas y las frecuencias
 function makeGraph(labels, frecc){
     let $grafica = document.querySelector("#grafica");
     let datosRandom = {
