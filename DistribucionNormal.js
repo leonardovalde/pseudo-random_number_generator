@@ -8,7 +8,7 @@ let iterations = document.getElementById("iterations");
 let riArray = [];
 let niArray = [];
 
-//Define el metodo del boto de calcular
+//Define el metodo del boton de calcular
 calculateBtn.onclick = function () {
   riArray = [];
   niArray = [];
